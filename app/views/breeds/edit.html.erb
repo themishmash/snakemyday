@@ -1,0 +1,27 @@
+<%= render "/pages/navbar" %>
+<h1>Edit Breed</h1>
+
+<%= form_with url: breed_path, model: @breed do |form| %>
+<div>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+</div>
+
+
+    
+
+    
+
+
+<br>
+<div>
+  <%= form.submit %>
+</div>
+
+<% end %>
+
+<br>
+
+
+<%= render "/pages/footer" %>
+

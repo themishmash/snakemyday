@@ -1,0 +1,18 @@
+footer {
+  position: fixed; 
+  bottom: 0;
+  height: 70px;
+  display: flex;
+  width: 100%;
+  border-top: 0.5px solid #C7B198;
+  background: white;
+  justify-content: flex-end;
+}
+
+
+
+.footer-tagline {
+  color: #225165;
+  margin-right: 30px;
+  
+} 

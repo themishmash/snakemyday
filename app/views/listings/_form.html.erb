@@ -1,0 +1,93 @@
+
+
+<%= form_with model: listing, local:true do |form| %>
+
+<% if listing.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@listing.errors.count, "error") %> prohibited this form from being saved:</h2>
+ 
+    <ul>
+    <% @listing.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+<div>
+<%= form.label :title %>
+<%= form.text_field :title, :required => true, :autofocus => true, :placeholder => "type something here", :pattern =>
+"[^0-9]*" %>
+
+</div>
+
+<div>
+  <%= form.label :description %>
+  <%= form.text_area :description, :placeholder => "Type something here" %>
+</div>
+    
+<div>
+  <%= form.label :price %>
+  <%= form.number_field :price, min: 0, :placeholder => "Use arrows for price" %>
+  
+</div>
+    
+<div>
+  <%= form.label :deposit %>
+  <%= form.number_field :deposit, min: 0, :placeholder => "Use arrows for deposit" %>
+  
+</div>
+
+<div>
+  <%= form.label :city %>
+  <%= form.text_field :city, :placeholder => "Type a city" %>
+</div>
+
+
+
+<div>
+  <%= form.label :state %>
+  <%= form.text_field :state, :placeholder => "Type a state" %>
+</div>
+
+<div>
+  <%= form.label :date_of_birth %>
+  <%= form.date_field :date_of_birth %>
+</div>
+
+<div>
+  <%= form.label :diet %>
+  <%= form.text_field :diet, :placeholder => "Type a diet" %>
+</div>
+
+<div>
+  <%= form.label :sex %><br>
+  <% Listing.sexes.keys.each do |s| %>
+    <%= form.label s  %>
+    <%= form.radio_button :sex, s %>
+
+  <% if s == listing.sex %>
+    <% form.radio_button :sex, :checked => true %>
+    <% end %>
+  <% end %>
+</div>
+
+<div>
+  <%= form.label :breed_id %>
+  <%= form.select :breed_id, 
+  options_for_select( Breed.all.collect { |u| [u.name, u.id] }, :selected => listing.breed_id ) %>
+</div>
+
+<div>
+<%= form.label :picture %>
+<%= form.file_field :picture, accept: 'image/png,image/gif,image/jpg,image/jpeg' %>
+</div>
+
+
+<br>
+<div>
+  <%= form.submit %>
+</div>
+
+<% end %>

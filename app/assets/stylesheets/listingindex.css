@@ -1,0 +1,40 @@
+.listing-hero {
+  display: flex;
+  justify-content: center;
+}
+
+#listing {
+  border-collapse: collapse;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5%;
+}
+
+#listing td, #listing th {
+  border: 1px solid black;
+  
+}
+
+#listing tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+
+#listing tr:hover {
+  background-color: #ddd;
+}
+
+#listing th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+
+}
+
+.listing-link {
+  text-decoration: none;
+  color: #376372;
+}
+
+#listing-row a:hover {
+  color: #C7B198;
+}

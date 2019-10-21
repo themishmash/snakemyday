@@ -1,0 +1,63 @@
+<%= render "/pages/navbar" %>
+<h1>Show</h1>
+
+<p> 
+<%= image_tag @listing.picture if @listing.picture.attached? %>
+</p>
+
+<p>
+<strong>Title:</strong>
+<%= @listing.title %>
+</p>
+
+<p>
+<strong>Description</strong>
+<%= @listing.description %>
+</p>
+
+<p>
+<strong>Price:</strong>
+<%= @listing.price %>
+</p>
+
+<p>
+<strong>Deposit:</strong>
+<%= @listing.deposit %>
+</p>
+
+<p>
+<strong>City:</strong>
+<%= @listing.city %>
+</p>
+
+<p>
+<strong>State:</strong>
+<%= @listing.state %>
+</p>
+
+<p>
+<strong>Date of birth:</strong>
+<%= @listing.date_of_birth %>
+</p>
+
+<p>
+<strong>Diet:</strong>
+<%= @listing.diet %>
+</p>
+
+<p>
+<strong>Sex:</strong>
+<%= @listing.sex %>
+</p>
+
+<p>
+<strong>Breed:</strong>
+<%= @listing.breed.name %>
+</p>
+
+
+
+<%= link_to "Edit", edit_listing_path(@listing) %>
+
+<%= render "/pages/footer" %>
+

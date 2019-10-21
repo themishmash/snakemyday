@@ -1,0 +1,51 @@
+/* table {
+  border: 1px solid black;
+} */
+
+/* body {
+  height: 100vh;
+} */
+
+.breed-hero {
+  display: flex;
+  justify-content: center;
+}
+
+
+#breed {
+  border-collapse: collapse;
+  display: flex;
+  justify-content: center;
+  /* height: 100vh; */
+  margin-bottom: 5%;
+}
+
+#breed td, #breed th {
+  border: 1px solid black;
+  
+}
+
+#breed tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+
+#breed tr:hover {
+  background-color: #ddd;
+}
+
+#breed th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+
+}
+
+.breed-link {
+  text-decoration: none;
+  color: #376372;
+}
+
+#breed-row a:hover {
+  color: #C7B198;
+}
+

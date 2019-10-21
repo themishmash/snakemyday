@@ -1,0 +1,75 @@
+body {
+  margin: 0px;
+  font-family: 'Noto Sans', sans-serif;
+  
+}
+
+.home-background {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/assets/photos/trevor-cole-snake.jpg); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  font-family: 'Lato', sans-serif;
+  height: 100vh;
+
+}
+
+/* CSS to style the buttons */
+
+.hero-text-box {
+  position: absolute;
+  top: 40%;
+  right: 10%;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  /* height: calc(100vh - 140px); */
+  /* background: yellow; */
+  align-content: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 20px;
+}
+
+.h1-home {
+  margin-left: 20px;
+  font-family: 'Noto Sans', sans-serif;
+  color: whitesmoke;
+}
+
+/* typewriting effect */
+
+.typewriter {
+  font-family: Courier, monospace;
+  display: inline-block;
+}
+
+.h1-home {
+  display: inline-block;
+  overflow: hidden;
+  letter-spacing: 2px;
+  animation: typing 4s steps(30, end), blink .75s step-end infinite;
+  white-space: nowrap;
+  font-size: 30px;
+  font-weight: 700;
+  border-right: 4px solid #30607D;
+  box-sizing: border-box;
+}
+
+@keyframes typing {
+  from { 
+      width: 0% 
+  }
+  to { 
+      width: 100% 
+  }
+}
+
+@keyframes blink {
+  from, to { 
+      border-color: transparent 
+  }
+  50% { 
+      border-color: #30607D; 
+  }
+}

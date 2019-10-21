@@ -1,0 +1,35 @@
+<%= render "/pages/navbar" %>
+<div class="breed-hero">
+<h1 id="breed-h1">Snake Breeds</h1>
+</div>
+
+<table id="breed">
+  <tr>
+    <th>Name</th>
+    <th>Breed id</th>
+    
+    <th colspan="3"></th>
+  </tr>
+
+<% @breeds.each do |breed|%>
+  <tr class="breed-row">
+    <td><%= breed.name %></td>
+    <td><%= breed.id %></td>
+
+
+    <td><%= link_to 'Show', breed_path(breed), class:"breed-link"%></td>
+    <td><%= link_to 'Edit', edit_breed_path(breed), class:"breed-link"%></td>
+    <td><%= link_to 'Destroy', breed_path(breed),
+            method: :delete,
+            data: { confirm: 'Are you sure?'}, class:"breed-link" %></td>
+  </tr>
+
+<% end %>
+
+</table>
+<%= render "/pages/footer" %>
+<br>
+
+
+
+

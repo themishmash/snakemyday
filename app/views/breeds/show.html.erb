@@ -1,0 +1,20 @@
+<%= render "/pages/navbar" %>
+<p>
+  <strong>Breed:</strong>
+  <%= @breed.name %>
+  <br>
+  
+  <strong>Date posted:</strong>
+  <%= @breed.created_at %>
+  <br>
+  <strong>Updated</strong>
+  <%= @breed.updated_at %>
+
+ 
+</p>
+
+<%= link_to "Listings", listings_path %>
+<%= link_to "Home", root_path %>
+<%= link_to "Breeds", breeds_path %>
+
+<%= render "/pages/footer" %>
