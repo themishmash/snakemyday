@@ -55,6 +55,13 @@
 <%= @listing.breed.name %>
 </p>
 
+<p>
+<strong>Trait:</strong>
+<% @listing.traits.each do |trait| %>
+<%= trait.name %>
+<% end %>
+</p>
+
 
 
 <%= link_to "Edit", edit_listing_path(@listing) %>

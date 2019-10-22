@@ -1,11 +1,13 @@
 <nav class="nav">
+  <ul>
     <div class="navbar-links">
-    <%= link_to "Home", root_path, class: "navbar-link" %>
-    <%= link_to "Listings", listings_path, class: "navbar-link" %>
-    <%= link_to "Add new listing", new_listing_path, class: "navbar-link" %>
-    <%= link_to "Breeds", breeds_path, class: "navbar-link" %>
-    <%=  link_to 'Add a New breed', new_breeds_path, class: "navbar-link" %>
-    <%= link_to "Login", root_path, class: "navbar-link" %>
-    
+    <li><%= link_to "Home", root_path, class: "navbar-link" %></li>
+    <li><%= link_to "Listings", listings_path, class: "navbar-link" %></li>
+    <li><%= link_to "Add new listing", new_listing_path, class: "navbar-link" %></li>
+    <li><%= link_to "Breeds", breeds_path, class: "navbar-link" %></li>
+    <li><%=  link_to 'Add a New breed', new_breeds_path, class: "navbar-link" %></li>
+    <li><%= link_to "Login", root_path, class: "navbar-link" %></li>
     </div>
-  </nav>
+
+  </ul>
+</nav>

@@ -1,4 +1,5 @@
 class ListingsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_listing, only: [ :show, :edit, :update, :destroy ] #this means we will do this action but only for these actions with the parameter associated with it. so delete info in show, edit, update, destroy as called set_listing does all this. 
 
   #this all matches in our routes
@@ -20,8 +21,9 @@ class ListingsController < ApplicationController
   def create
     # byebug #if type byebug - code will break here. sometimes if your raise is not working (like pry thing too)
     listing_params = params.require(:listing).permit(:title, :description, :breed_id, :sex, :price, :deposit, :city, :state, :date_of_birth, :diet, :picture) #this added so now after create new snake. look at schema to help make this. listing params - assigned to instance variable below.
-    @listing = Listing.new( listing_params ) 
-   
+    # @listing = Listing.new( listing_params ) 
+    
+    @listing = current_user.listings.create( listing_params )
 
     if @listing.save 
     #this saves to database. Data that is sent to controller - passed to instance variable and then saved. 
@@ -38,7 +40,7 @@ class ListingsController < ApplicationController
   end
 
   def update
-    listing_params = params.require(:listing).permit(:title, :description, :breed_id, :sex, :price, :deposit, :city, :state, :date_of_birth, :diet, :picture)
+    listing_params = params.require(:listing).permit(:title, :description, :breed_id, :sex, :price, :deposit, :city, :state, :date_of_birth, :diet, :picture, :trait)
     
     if @listing.update( listing_params )
       
@@ -67,7 +69,7 @@ class ListingsController < ApplicationController
   end 
 
   def listing_params
-    params.require(:listing).permit(:title, :description, :breed_id, :sex, :price, :deposit, :city, :state, :date_of_birth, :diet, :picture)
+    params.require(:listing).permit(:title, :description, :breed_id, :sex, :price, :deposit, :city, :state, :date_of_birth, :diet, :picture, :trait)
   end 
 
 end

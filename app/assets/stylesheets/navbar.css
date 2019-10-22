@@ -1,4 +1,36 @@
-.nav {
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255);
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: #0B6175;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #C3E5E4;
+}
+
+.active
+
+
+
+
+
+
+
+/* .nav {
   width: 100vw;
   height: 10%;
   display: flex;
@@ -25,4 +57,4 @@
 .nav a:hover {
   color: #C7B198;
 }
-
+ */

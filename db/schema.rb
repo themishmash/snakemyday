@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_20_232546) do
+ActiveRecord::Schema.define(version: 2019_10_21_233157) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,9 +55,41 @@ ActiveRecord::Schema.define(version: 2019_10_20_232546) do
     t.string "diet"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
     t.index ["breed_id"], name: "index_listings_on_breed_id"
+    t.index ["user_id"], name: "index_listings_on_user_id"
+  end
+
+  create_table "listings_traits", force: :cascade do |t|
+    t.bigint "listing_id"
+    t.bigint "trait_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["listing_id"], name: "index_listings_traits_on_listing_id"
+    t.index ["trait_id"], name: "index_listings_traits_on_trait_id"
+  end
+
+  create_table "traits", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "listings", "breeds"
+  add_foreign_key "listings", "users"
+  add_foreign_key "listings_traits", "listings"
+  add_foreign_key "listings_traits", "traits"
 end

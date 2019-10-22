@@ -1,5 +1,7 @@
 class Listing < ApplicationRecord
   belongs_to :breed
+  has_many :listings_traits
+  has_many :traits, through: :listings_traits
   enum sex: { female: 0, male: 1 } #this is called enumeration
 
 
@@ -17,7 +19,7 @@ class Listing < ApplicationRecord
 
   has_one_attached :picture
   
-  
+  belongs_to :user
 
   
 end
