@@ -22,6 +22,9 @@ Rails.application.routes.draw do
   get "/breeds/:id/edit", to: "breeds#edit", as:
   "edit_breed"
 
+  get "/payments/success", to: "payments#success"
+  post "payments/webhook", to: "payments#webhook"
+
   get "*path", to: "pages#not_found", constraints: lambda { |req| req.path.exclude? 'rails/active_storage' } #can type any garbage and still go to page is not found. that * 
 
 
