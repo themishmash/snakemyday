@@ -1,6 +1,16 @@
+
+
+
 You've made a  successful payment!
+<br>
+<%= "You bought #{@listing.title}"%>
+
+<%= image_tag @listing.picture if @listing.picture.attached?  %>
+<br>
+<%= "Your deposit was #{@listing.deposit}" %>
+<br>
+<%= "Thank you #{@user.email}" %>
 
 
-
-
+<br>
 <%= link_to "Go to listings", listings_path %>

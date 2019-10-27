@@ -1,5 +1,7 @@
+<section class="show_single_list">
 <%= render "/pages/navbar" %>
 <h1>Show</h1>
+
 
 <p> 
 <%= image_tag @listing.picture if @listing.picture.attached? %>
@@ -87,5 +89,8 @@
 
 <%= link_to "Edit", edit_listing_path(@listing) %>
 
+
+
 <%= render "/pages/footer" %>
 
+</section>
