@@ -68,3 +68,5 @@ gem "aws-sdk-s3", "~> 1.50"
 gem "devise", "~> 4.7"
 
 gem "stripe", "~> 5.7"
+
+
